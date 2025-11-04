@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveTalk Community - UK Delivery Driver Resources</title>
+    <style>
+        /* ALL YOUR EXISTING CSS GOES HERE */
+        :root {
+            --primary: #2c5aa0;
+            --secondary: #ff9900;
+            --dark: #333;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --success: #28a745;
+            --danger: #dc3545;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: var(--secondary);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: 600;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #e68a00;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        nav ul li a.active {
+            color: var(--primary);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-img {
+            height: 200px;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .feature-content {
+            padding: 20px;
+        }
+        
+        .feature-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        /* Road Updates Section */
+        .road-updates {
+            background-color: var(--light);
+        }
+        
+        .updates-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+        
+        .update-list {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .update-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .update-item:last-child {
+            border-bottom: none;
+        }
+        
+        .update-item h4 {
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+        
+        .update-meta {
+            display: flex;
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+        
+        .update-meta span {
+            margin-right: 15px;
+        }
+        
+        .update-severity {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+        
+        .severity-high {
+            background-color: #ffcccc;
+            color: var(--danger);
+        }
+        
+        .severity-medium {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        
+        .severity-low {
+            background-color: #d4edda;
+            color: var(--success);
+        }
+        
+        .map-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-style: italic;
+        }
+        
+        /* Resources Section */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .resource-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .resource-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        /* Community Section */
+        .community {
+            background-color: var(--light);
+        }
+        
+        .community-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .community-text h3 {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .community-features {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .community-features li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .community-features li:before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .community-image {
+            background-color: var(--primary);
+            height: 300px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Page Content */
+        .page-content {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .page-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .page-header h2 {
+            font-size: 2rem;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        
+        .breadcrumb a {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .breadcrumb span {
+            margin: 0 10px;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .content-block {
+            margin-bottom: 40px;
+        }
+        
+        .content-block h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .tip-card {
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .tip-card h4 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .updates-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .community-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div style="width: 40px; height: 40px; background-color: var(--primary); display: flex; align-items: center; justify-content: center; color: white; border-radius: 5px; margin-right: 10px; font-weight: bold;">DT</div>
+                <h1>DriveTalk Community</h1>
+            </div>
+            <div class="mobile-menu">☰</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="resources.html">Driver Resources</a></li>
+                    <li><a href="road-updates.html">Road Updates</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="#" class="btn">Join Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Your Road to Excellence in UK Delivery Driving</h2>
+            <p>Connect with fellow drivers, access essential resources, and stay updated on road conditions across the UK.</p>
+            <a href="#" class="btn btn-secondary">Join Our Community</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">What We Offer</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-img">🚗</div>
+                    <div class="feature-content">
+                        <h3>Driver Resources</h3>
+                        <p>Comprehensive guides, tips, and best practices to help you excel as a UK delivery driver.</p>
+                        <a href="resources.html">Learn More →</a>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img">🛣️</div>
+                    <div class="feature-content">
+                        <h3>Road Updates</h3>
+                        <p>Real-time information on roadworks, closures, and traffic conditions across the UK.</p>
+                        <a href="road-updates.html">View Updates →</a>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img">👥</div>
+                    <div class="feature-content">
+                        <h3>Community Forum</h3>
+                        <p>Connect with other drivers, share experiences, and get advice from industry experts.</p>
+                        <a href="community.html">Join Discussion →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Road Updates Section -->
+    <section class="road-updates">
+        <div class="container">
+            <h2 class="section-title">Latest Road Updates</h2>
+            <div class="updates-container">
+                <div class="update-list">
+                    <div class="update-item">
+                        <h4>M25 Junction 10-11 Closure</h4>
+                        <div class="update-meta">
+                            <span>Location: Surrey</span>
+                            <span>Posted: 2 hours ago</span>
+                        </div>
+                        <p>Overnight closures between junctions 10 and 11 for bridge demolition works. Diversions in place via A3 and A243.</p>
+                        <span class="update-severity severity-high">High Impact</span>
+                    </div>
+                    <div class="update-item">
+                        <h4>A1(M) Roadworks</h4>
+                        <div class="update-meta">
+                            <span>Location: Hertfordshire</span>
+                            <span>Posted: 5 hours ago</span>
+                        </div>
+                        <p>Lane closures between junctions 6 and 8 for resurfacing works. Expect delays during peak hours.</p>
+                        <span class="update-severity severity-medium">Medium Impact</span>
+                    </div>
+                    <div class="update-item">
+                        <h4>M6 Toll Road Maintenance</h4>
+                        <div class="update-meta">
+                            <span>Location: Staffordshire</span>
+                            <span>Posted: 1 day ago</span>
+                        </div>
+                        <p>Ongoing maintenance works with temporary lane restrictions. No major delays expected.</p>
+                        <span class="update-severity severity-low">Low Impact</span>
+                    </div>
+                </div>
+                <div class="map-container">
+                    [Interactive Road Updates Map]
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="road-updates.html" class="btn">View All Road Updates</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Essential Driver Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">📋</div>
+                    <h3>Licensing Requirements</h3>
+                    <p>Complete guide to driver licensing, medical requirements, and CPC certification.</p>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">⚖️</div>
+                    <h3>Legal Compliance</h3>
+                    <p>Understanding driver hours, tachograph rules, and UK transport regulations.</p>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">💼</div>
+                    <h3>Career Development</h3>
+                    <p>Advancement opportunities, training programs, and industry certifications.</p>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">🛠️</div>
+                    <h3>Vehicle Maintenance</h3>
+                    <p>Essential checks, maintenance schedules, and troubleshooting guides.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="resources.html" class="btn">Explore All Resources</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community">
+        <div class="container">
+            <h2 class="section-title">Join Our Community</h2>
+            <div class="community-content">
+                <div class="community-text">
+                    <h3>Connect with Fellow UK Delivery Drivers</h3>
+                    <p>Our community platform brings together delivery drivers from across the UK to share knowledge, experiences, and support.</p>
+                    <ul class="community-features">
+                        <li>Ask questions and get answers from experienced drivers</li>
+                        <li>Share route tips and delivery shortcuts</li>
+                        <li>Discuss industry news and changes</li>
+                        <li>Find local driving opportunities</li>
+                        <li>Access exclusive member-only resources</li>
+                    </ul>
+                    <a href="community.html" class="btn">Join the Community</a>
+                </div>
+                <div class="community-image">
+                    [Community Forum Preview]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>DriveTalk Community</h3>
+                    <p>Supporting UK delivery drivers with resources, updates, and community connections.</p>
+                    <div class="social-links">
+                        <a href="#">f</a>
+                        <a href="#">t</a>
+                        <a href="#">in</a>
+                        <a href="#">ig</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="resources.html">Driver Resources</a></li>
+                        <li><a href="road-updates.html">Road Updates</a></li>
+                        <li><a href="community.html">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Driver Handbook</a></li>
+                        <li><a href="#">Route Planner</a></li>
+                        <li><a href="#">Vehicle Guides</a></li>
+                        <li><a href="#">Industry News</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li>Email: info@drivetalk.co.uk</li>
+                        <li>Phone: 0800 123 4567</li>
+                        <li>Address: Unit 5, Transport Hub, Birmingham B1 1AA</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 DriveTalk Community. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('nav').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
