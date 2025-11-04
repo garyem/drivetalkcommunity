@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Resources - DriveTalk Community</title>
+    <style>
+        /* COPY ALL THE SAME CSS FROM INDEX.HTML HERE */
+        /* Paste the entire style section from index.html */
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div style="width: 40px; height: 40px; background-color: var(--primary); display: flex; align-items: center; justify-content: center; color: white; border-radius: 5px; margin-right: 10px; font-weight: bold;">DT</div>
+                <h1>DriveTalk Community</h1>
+            </div>
+            <div class="mobile-menu">☰</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resources.html" class="active">Driver Resources</a></li>
+                    <li><a href="road-updates.html">Road Updates</a></li>
+                    <li><a href="community.html">Community</a></li>
+                    <li><a href="#" class="btn">Join Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h2>Driver Resources</h2>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>></span>
+                <a href="resources.html">Driver Resources</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="page-content">
+        <div class="container">
+            <div class="content-block">
+                <h3>Essential Guides for UK Delivery Drivers</h3>
+                <p>Everything you need to excel in your delivery career, from licensing to advanced techniques and industry best practices.</p>
+            </div>
+
+            <div class="content-block">
+                <h3>Getting Started</h3>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h4>Driver Licensing Requirements</h4>
+                        <p>Complete guide to obtaining and maintaining your UK driving license, medical requirements, and CPC certification for professional delivery work.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Vehicle Requirements & Standards</h4>
+                        <p>Understanding insurance, MOT, vehicle maintenance schedules, and compliance standards for professional delivery vehicles.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Essential Documentation</h4>
+                        <p>What paperwork you need to carry, maintain records of, and present during inspections for full legal compliance.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <h3>Advanced Driving Techniques</h3>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h4>Route Optimization Strategies</h4>
+                        <p>How to plan efficient routes using modern tools, avoid traffic hotspots, and maximize delivery efficiency while saving fuel.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Professional Customer Service</h4>
+                        <p>Communication tips, handling difficult delivery situations, and building positive relationships with customers and businesses.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Time Management Mastery</h4>
+                        <p>Strategies for managing tight schedules, multiple deliveries, and unexpected delays while maintaining service quality.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <h3>Legal & Compliance</h3>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h4>Driver Hours & Tachograph Rules</h4>
+                        <p>Understanding UK and EU driving hour regulations, break requirements, and digital tachograph compliance.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Health & Safety Requirements</h4>
+                        <p>Vehicle safety checks, load securing standards, and personal protective equipment requirements for delivery drivers.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Industry Regulations Updates</h4>
+                        <p>Stay current with changing transport laws, emission standards, and industry-specific regulations affecting delivery drivers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>DriveTalk Community</h3>
+                    <p>Supporting UK delivery drivers with resources, updates, and community connections.</p>
+                    <div class="social-links">
+                        <a href="#">f</a>
+                        <a href="#">t</a>
+                        <a href="#">in</a>
+                        <a href="#">ig</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="resources.html">Driver Resources</a></li>
+                        <li><a href="road-updates.html">Road Updates</a></li>
+                        <li><a href="community.html">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Driver Handbook</a></li>
+                        <li><a href="#">Route Planner</a></li>
+                        <li><a href="#">Vehicle Guides</a></li>
+                        <li><a href="#">Industry News</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li>Email: info@drivetalk.co.uk</li>
+                        <li>Phone: 0800 123 4567</li>
+                        <li>Address: Unit 5, Transport Hub, Birmingham B1 1AA</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 DriveTalk Community. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('nav').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
